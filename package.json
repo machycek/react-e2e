@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.4"
+    "nightwatch": "^0.9.11",
+    "react-scripts": "0.8.4",
+    "selenium-download": "^2.0.9"
   },
   "dependencies": {
     "react": "^15.4.1",
@@ -13,6 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:e2e:init": "node ./tests/installSelenium.js",
+    "test:e2e": "./node_modules/.bin/nightwatch tests/e2e"
   }
 }
