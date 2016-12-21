@@ -17,7 +17,8 @@ class App extends Component {
 		  userData,
 		}
 
-    redirect('/')
+		// always redirect to homepage as long are we are not saving any userData
+		redirect('/')
   }
 
   handleSubmit = (e) => {
@@ -48,8 +49,8 @@ class App extends Component {
           !authorized
           ?
             <form onSubmit={this.handleSubmit} className="App-form">
-              <input name="username" type="text" />
-              <button>Register</button>
+              <input data-test="registerUsername" name="username" type="text" />
+              <button data-test="registerSubmit">Register</button>
             </form>
           :
             <p>Welcome {username}!</p>
