@@ -13,6 +13,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:e2e:init": "node ./tests/installSelenium.js",
+		"test:e2e": "./node_modules/.bin/nightwatch tests/e2e"
   }
 }
