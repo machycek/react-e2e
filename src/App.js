@@ -1,18 +1,59 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+function redirect (url) {
+  history.pushState(undefined, undefined, url)
+}
+
 class App extends Component {
+  constructor(props) {
+		super(props)
+
+		const userData = { username: false }
+		const authorized = false
+
+		this.state = {
+		  authorized,
+		  userData,
+		}
+
+    redirect('/')
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      username: e.target.username.value,
+    }
+
+    this.setState({
+      authorized: true,
+      userData,
+    })
+
+    redirect('/welcome')
+  }
+
+
   render() {
+    const {
+      userData: { username },
+      authorized,
+    } = this.state
+
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {
+          !authorized
+          ?
+            <form onSubmit={this.handleSubmit} className="App-form">
+              <input name="username" type="text" />
+              <button>Register</button>
+            </form>
+          :
+            <p>Welcome {username}!</p>
+        }
       </div>
     );
   }
