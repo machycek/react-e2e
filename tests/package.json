@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "nightwatch": "^0.9.11",
+    "selenium-download": "^2.0.9"
+  }
+}
