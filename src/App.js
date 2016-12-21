@@ -36,7 +36,6 @@ class App extends Component {
     redirect('/welcome')
   }
 
-
   render() {
     const {
       userData: { username },
