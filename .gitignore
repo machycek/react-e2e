@@ -1,15 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# tests
-.selenium
-.reports
-.screenshots
-
 # dependencies
 node_modules
 
 # testing
 coverage
+.selenium
+.reports
+.screenshots
 
 # production
 build
