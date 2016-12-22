@@ -2,6 +2,8 @@
 
 # tests
 .selenium
+.reports
+.screenshots
 
 # dependencies
 node_modules
